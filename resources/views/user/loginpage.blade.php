@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="{{  url('/css.css') }}" />
 
     <script src="{{ asset('/js.js') }}" defer></script> 
+    <script src="{{ secure_asset('/js.js') }}" defer></script> 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
