@@ -1,6 +1,7 @@
 <html>
     <head>
     <link rel="stylesheet" type="text/css" href="{{  secure_asset('/css.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{  url('/css.css') }}" />
 
     <script src="{{ asset('/js.js') }}" defer></script> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
