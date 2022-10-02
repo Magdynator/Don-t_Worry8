@@ -1,5 +1,7 @@
 <head>
  <link rel="stylesheet" type="text/css" href="{{ url('admincss/css.css') }}" />
+ <link rel="stylesheet" type="text/css" href="{{  secure_asset('admincss/css.css') }}" />
+
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>   

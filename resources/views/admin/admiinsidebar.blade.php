@@ -10,19 +10,27 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="{{ url('admincss/testadmin.css') }}" />
     <link rel="stylesheet" href="{{ url('https://cd0njs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('admincss/testadmin.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('https://cd0njs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}" />
 
     <!-- Boxicons CSS -->
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css') }}" />
 
     <!-- <link rel="stylesheet" type="text/css" href="{{ url('admincss/pagecss.css') }}" /> -->
   <!-- Required meta tags -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url('admincss/pagecss.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('admincss/pagecss.css') }}" />
+
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />    
+  <link rel="stylesheet" type="text/css" href="{{  secure_asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css') }}" />
+
 </head>
   <body>
     <nav>
