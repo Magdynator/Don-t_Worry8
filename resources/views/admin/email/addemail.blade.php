@@ -11,9 +11,19 @@
     <legend>Add email</legend>
 		<form action="reg" method="post" >
         @csrf
+		
+			<div class='row'>
+
+				<input type="text" placeholder="Id" name='id' data-required="true" data-error-message="Your First Name is required">
+			</div>
 			<div class='row'>
 
 				<input type="text" placeholder="Email" name='email' data-required="true" data-error-message="Your First Name is required">
+			</div>
+
+			<div class='row'>
+
+				<input type="text" placeholder="Rule Id" name='ruleid' data-required="true" data-error-message="Your First Name is required">
 			</div>
 			<div class='row'>
 				<input type="text" placeholder="Password"  name='password' data-required="true" data-type="email" data-error-message="Your E-mail is required">

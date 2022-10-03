@@ -6,6 +6,7 @@
 <script src="{{ asset('/adminJs/addemailjs.js') }}" defer></script> 
 <script src="{{ secure_asset('/adminJs/addemailjs.js') }}" defer></script> 
 
+<title>add game 4 point</title>
 
 <div id="registration-form">
 	<div class='fieldset'>

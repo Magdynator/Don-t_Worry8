@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/admincss/email/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('/admincss/email/style.css') }}" />
 
-    <title>emails</title>
+    <title>game 9</title>
     
     
   </head>
@@ -36,7 +36,7 @@
             @endif
     <div class="container">
     <h1 Style="text-align: center; background-color:rgb(210, 210, 210);">Game 9</h1><br><br>
-    <button type="button" class="btn btn-primary" onclick="window.location='{{ url("admin/addgame9") }}'">Add email</button>
+    <button type="button" class="btn btn-primary" onclick="window.location='{{ url("admin/addgame9") }}'">Add game 9 point</button>
       
 
       <div class="table-responsive">
