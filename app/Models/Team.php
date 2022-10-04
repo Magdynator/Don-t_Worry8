@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class team extends Model
 {
-    protected $fillable = ['id', 'email', 'password'];
+    protected $fillable = ['id','rule_id','email', 'password'];
     public $incrementing = false;
 
 }
