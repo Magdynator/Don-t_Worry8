@@ -81,3 +81,7 @@ Route::post('admin/addGame8',[AdminController::class,'addGame8']);
 Route::get('admin/addgame9',[AdminController::class,'game9']);
 Route::post('admin/addGame9',[AdminController::class,'addGame9']);
 
+Route::get('/exam1',function () {
+
+    return view('exams/exam1');
+});
