@@ -100,9 +100,13 @@ public function addemail(){
 }
 
 public function reg(Request $req){  
+    $id = $req->input("id");
+    $ruleId = $req->input("ruleid");
     $email = $req->input("email");
     $password = $req->input("password");
     $team = Team::create([
+        'id'=> $id,
+        'rule_id' =>$ruleId,
         'email' => $email,
         'password' => $password,
         'created_at' => Carbon::now()->toDateTimeString(),
