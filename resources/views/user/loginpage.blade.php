@@ -1,6 +1,6 @@
 <html>
     <head>
-    <link rel="stylesheet" type="text/css" href="{{  secure_asset('/css.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{  secure_asset('/homeusercss/css.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{  url('/css.css') }}" />
 
     <script src="{{ asset('/js.js') }}" defer></script> 

@@ -19,7 +19,7 @@ class UserController extends Controller
     }   
     if($req->input('email') == $emaildetails-> email and $req->input('password') == $emaildetails-> password ) {
         if ($emaildetails-> rule_id == 0){
-            return view('user/home');
+            return view('user/index');
         }else{
             return redirect('/');
         }    

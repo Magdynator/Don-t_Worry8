@@ -1,0 +1,36 @@
+.landing {
+    background-image: url(/img/dontworry.jpeg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+  }
+  .landing .intro-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    margin: 30px;
+    background-size: cover;
+
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;    max-width: 100%;
+  }
+  .landing .intro-text h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    padding: auto;
+     color: #000000;
+  }
+  .landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8;
+     color: #000000;
+  }
+
+  .continer{
+    background-color: black;
+  }

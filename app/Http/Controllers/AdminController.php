@@ -275,5 +275,6 @@ public function addGame9(Request $req){
     return  redirect('/adminpanal')->with('status','Game Point Added Successfully');
 
 }
+
 }
 
