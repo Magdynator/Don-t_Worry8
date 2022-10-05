@@ -20,7 +20,7 @@
 body {
 	align-items: center;
 	background-color: var(--white);
-	background: url("/img/dontworry.jpeg");
+	background: url("/img/dontworry2.jpeg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -103,7 +103,7 @@ body {
 
 .overlay {
 	background-color: var(--lightblue);
-	background: url("/img/dontworry.jpeg");
+	background: url("/img/dontworry2.jpeg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
