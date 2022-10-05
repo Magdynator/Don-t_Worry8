@@ -341,5 +341,22 @@ public function editgamesA3($id, Request $req){
     DB::update('update games set team_id = ?, game_7 = ?, game_8 = ? , game_9 = ? where team_id = ?', [$teamid, $game7, $game8, $game9, $id]);
     return  redirect('/adminpanal');
 }
+
+public function upMas(Request $req){
+
+    if ($req->hasFile('img')) {
+
+        $req->validate([
+            'img' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+        ]);
+        $img = $req->file->hashName();
+        $mass = $req->input('mass');
+
+    DB::insert('insert into mas (masseges, img) values (?, ?)', [$mass, $img]);
+    return redirect('/adminpanal');
+
 }
 
+
+}
+}

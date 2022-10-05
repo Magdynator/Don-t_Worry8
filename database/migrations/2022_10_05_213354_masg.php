@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('close', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('open_or1')->default('close');
-            $table->string('open_or2')->default('close');
-            $table->string('open_or3')->default('close');
-            $table->string('open_or4')->default('close');
-
-
-            
+        Schema::create('mas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('masseges')->default('');
+            $table->string('img')->default('');
 
         });
     }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\mas;
+use App\Models\ans;
+
 
 class UserController extends Controller
 {
@@ -25,6 +28,14 @@ class UserController extends Controller
         }    
     } else{
         return redirect('/')->with('status','Email or Password was wrong');
-    }    
+    }     
 }
+
+public function getMas(){
+    $mas = DB::table('mas')
+    ->orderBy('id', 'desc')
+    ->first();
+    return view('admin.massage.messeage',compact('mas')); 
+    // return $mas;
+ }
 }

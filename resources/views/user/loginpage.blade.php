@@ -30,11 +30,10 @@
 
 	<!-- Sign In -->
 	<div class="container__form container--signin">
-		<form action="#" class="form" id="form2">
+		<form action="/" class="form" id="form2">
 			<h2 class="form__title">اعرف نتيجتك</h2>
 			<input type="email" placeholder="Email" class="input" />
 			<input type="password" placeholder="Password" class="input" />
-			<a href="#" class="link">Forgot your password?</a>
 			<button class="btn">نتيجتك</button>
 		</form>
 	</div>

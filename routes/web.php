@@ -125,8 +125,12 @@ Route::get('/exam4',function () {
     }
 });
 
+Route::get('/admin/Message',function () {
+    return view('admin.massage.masgform');
+});
 
-
+Route::post('admin/mas',[AdminController::class,'upMas']);
+Route::get('/massage', [UserController::class, 'getMas']);
 
 
 Route::get('admin1/{id}/edit/games', [AdminController::class, 'getgamesA1']);
