@@ -35,7 +35,7 @@
 			<input type="email" placeholder="Email" class="input" />
 			<input type="password" placeholder="Password" class="input" />
 			<a href="#" class="link">Forgot your password?</a>
-			<button class="btn">نتيجتك</button>
+			<button class="btn">نتيك</button>
 		</form>
 	</div>
 
