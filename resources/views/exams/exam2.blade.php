@@ -1,13 +1,13 @@
 
 <head>
-<title>Exam 1</title>
+<title>Exam 2</title>
 <link rel="stylesheet" type="text/css" href="{{  secure_asset('/exam/css.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{  url('/exam/css.css') }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <div class="login-box">
-  <h2>الأمتحان الأول</h2>
+  <h2>الأمتحان الثاني</h2>
   <form>
   <fieldset>
     <legend>عجبك الموقع</legend>

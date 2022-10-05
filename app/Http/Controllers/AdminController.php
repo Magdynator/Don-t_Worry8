@@ -82,6 +82,19 @@ public function adminPage(Request $req){
             $game9 = Games::all();
             return view('admin.games.game9.game9',compact('game9'));
             break;
+        case 11:
+            $games = Games::all();
+            return view('admin/games/admin/admin1',compact('games') );
+            break;
+        case 12:
+            $games = Games::all();
+            return view('admin/games/admin2/admin2',compact('games') );
+            break;         
+        case 13:
+            $games = Games::all();
+            return view('admin/games/admin3/admin3',compact('games') );
+            break;
+                    
         default:
         return redirect('/');
     }
@@ -168,7 +181,7 @@ public function editgames($id, Request $req){
     $game8 = $req->input("game8");  
     $game9 = $req->input("game9");    
 
-    DB::update('update games set team_id = ?, game_1 = ?, game_2 = ? , game_3 = ?, game_4 = ?, game_5 = ?, game_6 = ?, game_7 = ?, game_8 = ?, game_9 = ? where team_id = ?', [$teamid , $point , $id]);
+    DB::update('update games set team_id = ?, game_1 = ?, game_2 = ? , game_3 = ?, game_4 = ?, game_5 = ?, game_6 = ?, game_7 = ?, game_8 = ?, game_9 = ? where team_id = ?', [$teamid , $game1, $game2, $game3, $game4, $game5, $game6, $game7, $game8, $game9, $id]);
     return  redirect('/adminpanal')->with('status','Game Point Added Successfully');
 }
 
@@ -279,6 +292,54 @@ public function addGame9(Request $req){
     return  redirect('/adminpanal')->with('status','Game Point Added Successfully');
 
 }
+public function getgamesA1($id){  
+   
+    $game = Games::where('team_id', $id)->first();
+   
+    return  view('admin.games.admin.editpoint',compact('game'));
+}
 
+public function editgamesA1($id, Request $req){
+    $teamid = $req->input("teamId");
+    $game1 = $req->input("game1");
+    $game2 = $req->input("game2");  
+    $game3 = $req->input("game3");  
+ 
+    DB::update('update games set team_id = ?, game_1 = ?, game_2 = ? , game_3 = ? where team_id = ?', [$teamid, $game1, $game2, $game3, $id]);
+    return  redirect('/adminpanal');
+}
+
+public function getgamesA2($id){  
+   
+    $game = Games::where('team_id', $id)->first();
+   
+    return  view('admin.games.admin2.editpoint',compact('game'));
+}
+
+public function editgamesA2($id, Request $req){
+    $teamid = $req->input("teamId");
+    $game4 = $req->input("game4");
+    $game5 = $req->input("game5");  
+    $game6 = $req->input("game6");  
+ 
+    DB::update('update games set team_id = ?, game_4 = ?, game_5 = ? , game_6 = ? where team_id = ?', [$teamid, $game4, $game5, $game6, $id]);
+    return  redirect('/adminpanal');
+}
+public function getgamesA3($id){  
+   
+    $game = Games::where('team_id', $id)->first();
+   
+    return  view('admin.games.admin3.editpoint',compact('game'));
+}
+
+public function editgamesA3($id, Request $req){
+    $teamid = $req->input("teamId");
+    $game7 = $req->input("game7");
+    $game8 = $req->input("game8");  
+    $game9 = $req->input("game9");  
+ 
+    DB::update('update games set team_id = ?, game_7 = ?, game_8 = ? , game_9 = ? where team_id = ?', [$teamid, $game7, $game8, $game9, $id]);
+    return  redirect('/adminpanal');
+}
 }
 

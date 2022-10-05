@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController ;
+use Illuminate\Support\Facades\DB;
+use App\Models\Games;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +87,52 @@ Route::get('admin/addgame9',[AdminController::class,'game9']);
 Route::post('admin/addGame9',[AdminController::class,'addGame9']);
 
 Route::get('/exam1',function () {
+    $rule =DB::table('others')->orderBy('id', 'DESC')->first();
+    if ($rule-> open_or1 == 'close'){
+         return view('soon');
+    }else{
+        return view('exams/exam1');
+    }
+    
 
-    return view('exams/exam1');
 });
+Route::get('/exam2',function () {
+    $rule =DB::table('others')->orderBy('id', 'DESC')->first();
+    if ($rule-> open_or2 == 'close'){
+         return view('soon');
+    }else{
+        return view('exams/exam2');
+    }
+    
+
+});
+Route::get('/exam3',function () {
+    $rule =DB::table('others')->orderBy('id', 'DESC')->first();
+    if ($rule-> open_or3 == 'close'){
+         return view('soon');
+    }else{
+        return view('exams/exam3');
+    }
+    
+
+});
+Route::get('/exam4',function () {
+    $rule =DB::table('others')->orderBy('id', 'DESC')->first();
+    if ($rule-> open_or4 == 'close'){
+         return view('soon');
+    }else{
+        return view('exams/exam4');
+    }
+});
+
+
+
+
+
+Route::get('admin1/{id}/edit/games', [AdminController::class, 'getgamesA1']);
+Route::post('admin1/{id}/edit/games',[AdminController::class,'editgamesA1']);
+
+Route::get('admin2/{id}/edit/games', [AdminController::class, 'getgamesA2']);
+Route::post('admin2/{id}/edit/games',[AdminController::class,'editgamesA2']);
+Route::get('admin3/{id}/edit/games', [AdminController::class, 'getgamesA3']);
+Route::post('admin3/{id}/edit/games',[AdminController::class,'editgamesA3']);

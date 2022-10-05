@@ -553,7 +553,13 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+.center {
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 30%;
 
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
