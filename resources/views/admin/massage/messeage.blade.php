@@ -24,8 +24,8 @@ body, html {height: 100%}
     Don't Worry'
   </div>
   <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">{{ $mas-> masseges }}</h1>
-    <img src = {{ url('public/Image/'. $mas->img )}} >
+    <h1 class="w3-jumbo w3-animate-top"> {{ $mas-> masseges }}</h1>
+    <img src = {{  $mas->img }} >
     <hr class="w3-border-grey" style="margin:auto;width:40%">
   </div>
   
