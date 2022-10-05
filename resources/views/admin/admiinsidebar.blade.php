@@ -8,6 +8,7 @@
     <!--<title>Sidebar Menu | Side Navigation Bar</title>-->
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    
     <link rel="stylesheet" type="text/css" href="{{ url('admincss/testadmin.css') }}" />
     <link rel="stylesheet" href="{{ url('https://cd0njs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{  secure_asset('css/style.css') }}" />
