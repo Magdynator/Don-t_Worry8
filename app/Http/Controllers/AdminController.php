@@ -343,15 +343,8 @@ public function editgamesA3($id, Request $req){
 }
 
 public function upMas(Request $req){
-
-    if ($req->hasFile('img')) {
-
-        $req->validate([
-            'img' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
-        ]);
-        $img = $req->file->hashName();
-        $mass = $req->input('mass');
-
+    $img = $req->input('img');
+    $mass = $req->input('mass');
     DB::insert('insert into mas (masseges, img) values (?, ?)', [$mass, $img]);
     return redirect('/adminpanal');
 
@@ -359,4 +352,4 @@ public function upMas(Request $req){
 
 
 }
-}
+
