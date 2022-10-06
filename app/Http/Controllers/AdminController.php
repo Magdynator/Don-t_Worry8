@@ -44,7 +44,7 @@ public function adminPage(Request $req){
             $games = Games::all();
             $exam1 = Exam1::all();
             $exam2 = Exam2::all();
-            return view('admin.adminpage',compact('emails', 'games', 'exam1', 'exam2', 'exam3', 'exam4'));
+            return view('admin.adminpage',compact('emails', 'games', 'exam1', 'exam2'));
             break;
         case 1:
             $game1 = Games::all();
