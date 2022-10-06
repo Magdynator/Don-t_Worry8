@@ -36,12 +36,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#exam2">الأمحان الثاني</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#exam3">الأمتحان الثالث</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#exam4">الأمتحان الرابع</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -136,35 +130,7 @@
     <!-- End of portfolio section -->
 
     <!-- Blog Section -->
-    <section class="section" id="exam3">
-    <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
-                    <h6  style="text-align: center;" class="section-title mb-0">الأمتحان الثالث </h6><br>
-                    <h6  style="text-align: center;" >شوفت الموضوع سهل ازاي ياعم يلا خش</h6><br>
-                   <div class="center">
-                    <button type="button" class="btn btn-primary" onclick="window.location='{{ url("/exam3") }}'">الأمتحان الثالث </button>
-                   </div>
-                </div>
-             </div>              
-        </div> 
-    </section>
-    <!-- End of Blog Section -->
-
-    <!-- Testmonial Section -->
-    <section class="section" id="exam4">
-    <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
-                    <h6  style="text-align: center;" class="section-title mb-0">الأمتحان الرابع </h6><br>
-                    <h6  style="text-align: center;">اكيد مش محتاج اقولك يلا خش على طول</h6><br>
-                   <div class="center">
-                    <button type="button" class="btn btn-primary" onclick="window.location='{{ url("/exam4") }}'">الأمتحان الرابع </button>
-                   </div>
-                </div>
-             </div>              
-    </div>
-    </section>
+    
     <!-- End of Testmonial Section -->
 
     <!-- Contact Section -->

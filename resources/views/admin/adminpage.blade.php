@@ -182,69 +182,8 @@
         
     </div>
 
-    <div class="history_lists">
-        <div class="list1">
-          <div class="row">
-            <h4>Exam 3</h4>
-            <a href="admin/email">See all</a>
-          </div>
-          <table>
-          <thead>
-            <tr>
-              
-              <th scope="col">teamId</th>
-              <th scope="col">examPoint</th>
-            </tr>
-          </thead>
-            <tbody>
-            @foreach($exam3 as $exam)
+    
 
-<tr scope="row">
-          <td>
-          
-            {{ $exam->team_id}}
-           
-          </td>
-          <td>
-            {{ $exam->exam_3_point}}
-           
-            </td>
-</tr>
-</tbody>
-
-@endforeach     
-          </table>
-        </div>
-
-        <div class="list2">
-          <div class="row">
-            <h4>Exam 4</h4>
-            <a href="admin/Games">See all</a>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>teamId</th>
-                <th>exampoint</th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach($exam4 as $exam)
-
-<tr scope="row">
-          <td>
-          
-            {{ $exam->team_id}}
-           
-          </td>
-          <td>
-            {{ $exam->exam_4_point}}
-           
-            </td>
-          
-            </tr>
-
-@endforeach 
             </tbody>
           </table>
         </div>
