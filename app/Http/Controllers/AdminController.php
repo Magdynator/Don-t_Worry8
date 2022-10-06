@@ -354,7 +354,7 @@ public function getsetting(Request $req){
     $state2 = $req->input('state2');
     $state3 = $req->input('state3');
     $state4 = $req->input('state4');
-    $id =DB::table('others')->where('id', \DB::raw("(select max(`id`) from others)"))->get();
+    $id =DB::raw("(select max(`id`) from others)");
     DB::update('update others set open_or1 = ?, open_or2 = ?, open_or3 = ? , open_or4 = ? where id = ?', [$state, $state2, $state3, $state4,$id]);
     return redirect('/adminpanal');
    
