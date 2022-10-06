@@ -7,11 +7,6 @@
 
 </head>
 
-{{ for($open == "open"){
-    if ($open == "close"){
-
-    }
-}}}
 <div class="login-box" >
   <h2>الأمتحان الأول</h2>
   <form method ="Post" action="welldone">
