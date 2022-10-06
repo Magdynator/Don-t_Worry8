@@ -10,7 +10,7 @@
     <link href={{ secure_asset('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap') }}rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ url('/admincss/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ usecure_assetrl('/admincss/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('/admincss/style.css') }}" />
 
 
     <link rel="stylesheet" type="text/css" href="{{ url('/admincss/email/owl.carousel.min.css') }}" />

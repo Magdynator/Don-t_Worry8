@@ -11,7 +11,6 @@ use App\Models\ans;
 class UserController extends Controller
 {
     public function home(){
-        DB::insert('insert into others (id,open_or1) values (?,?)', [2,"close"]);
 
         return view('user/loginpage');
     }
@@ -40,7 +39,7 @@ public function getMas(){
  }
 
  public function res(Request $req){  
-    $emaildetails = DB::table('teams')->where('id', $req->input('email'))->first();
+    $emaildetails = DB::table('teams')->where('id', $req->input('teamNumber'))->first();
     if (empty($emaildetails)){
         return redirect('/')->with('status','Email or Password was wrong');
     }   
