@@ -44,8 +44,6 @@ public function adminPage(Request $req){
             $games = Games::all();
             $exam1 = Exam1::all();
             $exam2 = Exam2::all();
-            $exam3 = Exam3::all();
-            $exam4 = Exam4::all();
             return view('admin.adminpage',compact('emails', 'games', 'exam1', 'exam2', 'exam3', 'exam4'));
             break;
         case 1:
