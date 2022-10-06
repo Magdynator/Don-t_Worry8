@@ -30,8 +30,10 @@
 
 	<!-- Sign In -->
 	<div class="container__form container--signin">
-		<form action="/" class="form" id="form2">
-			<h2 class="form__title">اعرف نتيجتك</h2>
+		<form action="res" class="form" method="Post"id="form2">
+		@csrf
+		<h2 class="form__title">اعرف نتيجتك</h2>
+			<input type="text" placeholder="Team number" name="teamNumber" class="input" />
 			<input type="email" placeholder="Email" class="input" />
 			<input type="password" placeholder="Password" class="input" />
 			<button class="btn">نتيجتك</button>

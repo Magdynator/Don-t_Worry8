@@ -23,6 +23,11 @@ class EmailSeeder extends Seeder
             'password' => 'mdy8',
         ]);
 
+        DB::table('others')->insert([
+
+            'open_or1' => 'close'
+        ]);
+
         
     }
 }

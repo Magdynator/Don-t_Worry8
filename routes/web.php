@@ -23,7 +23,8 @@ use App\Models\Games;
 Route::get('/',[UserController::class,'home']);
 Route::post('/login',[UserController::class,'login']);
 Route::get('/login',[UserController::class,'login']);
-
+Route::post('/res',[UserController::class,'res']);
+Route::get('/res',[UserController::class,'res']);
 // admin route
 Route::get('/admin',[AdminController::class,'admin']);
 Route::post('/adminpanal',[AdminController::class,'adminPage']);
@@ -134,7 +135,7 @@ Route::get('/setting',function () {
 Route::post('/setting',[AdminController::class,'getsetting']);
 Route::post('/welldone',[AdminController::class,'exam1A']);
 Route::post('/welldone2',[AdminController::class,'exam2A']);
-    
+
 
 Route::post('admin/mas',[AdminController::class,'upMas']);
 Route::get('/massage', [UserController::class, 'getMas']);
