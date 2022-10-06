@@ -23,18 +23,17 @@
         <label for="open">open</label><br>
         <input type="radio"  name="state2" value="close">
         <label for="close">close</label><br>
-			<input type="submit" value="edit">
-                        <h2>exam3</h2> 
+        <h2>exam3</h2> 
         <input type="radio"  name="state3" value="open">
         <label for="open">open</label><br>
         <input type="radio"  name="state3" value="close">
         <label for="close">close</label><br>
-			<input type="submit" value="edit"><h2>exam2</h2> 
         <input type="radio"  name="state4" value="open">
         <label for="open">open</label><br>
         <input type="radio"  name="state4" value="close">
         <label for="close">close</label><br>
-			<input type="submit" value="edit">
+<input type="submit" value="edit">
+
 		</form>
 	</div>
 </div>
