@@ -350,12 +350,12 @@ public function upMas(Request $req){
 }
 
 public function getsetting(Request $req){
-    $state = $req->input('state');
+    $state =  $req->input('state');
     $state2 = $req->input('state2');
     $state3 = $req->input('state3');
     $state4 = $req->input('state4');
-    // return $state;  
-    DB::update('update others set open_or1 = ?, open_or2 = ?, open_or3 = ? , open_or4 = ? where id = ?', [$state, $state2, $state3, $state4,1]);
+    $id =DB::table('others')->where('id', \DB::raw("(select max(`id`) from others)"))->get();
+    DB::update('update others set open_or1 = ?, open_or2 = ?, open_or3 = ? , open_or4 = ? where id = ?', [$state, $state2, $state3, $state4,$id]);
     return redirect('/adminpanal');
    
 }
