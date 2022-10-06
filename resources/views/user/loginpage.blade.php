@@ -34,8 +34,8 @@
 		@csrf	
 		<h2 class="form__title">اعرف نتيجتك</h2>
 			<input type="text" placeholder="Team number" name="teamNumber" class="input" />
-			<input type="email" placeholder="Email" class="input" />
-			<input type="password" placeholder="Password" class="input" />
+			<input type="email" placeholder="Email" name="email" class="input" />
+			<input type="password" placeholder="Password"name="password" class="input" />
 			<button class="btn">نتيجتك</button>
 		</form>
 	</div>

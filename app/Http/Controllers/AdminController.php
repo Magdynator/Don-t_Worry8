@@ -464,5 +464,9 @@ public function exam2A(Request $req){
     return redirect('/'); 
 
 }
+public function res(){
+    
+}
+
 }
 
