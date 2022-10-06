@@ -89,6 +89,7 @@ Route::post('admin/addGame9',[AdminController::class,'addGame9']);
 
 Route::get('/exam1',function () {
     $rule =DB::table('others')->orderBy('id', 'DESC')->first();
+    DB::insert('insert into others (id,open_or1) values (?,?)', [1,"close"]);
     if ($rule-> open_or1 == 'close'){
          return view('soon');
     }else{

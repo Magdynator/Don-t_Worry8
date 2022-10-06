@@ -11,7 +11,8 @@ use App\Models\ans;
 class UserController extends Controller
 {
     public function home(){
-     
+        DB::insert('insert into others (id,open_or1) values (?,?)', [2,"close"]);
+
         return view('user/loginpage');
     }
 
