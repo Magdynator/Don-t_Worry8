@@ -22,9 +22,9 @@ html {
   
   .login-box {
     position: absolute;
-    top: 55%;
+    top: 125%;
     left: 50%;
-    width: 70%;
+    width: 80%;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0,0,0,.5);
@@ -88,7 +88,7 @@ html {
     letter-spacing: 4px
   }
   
-  .login-box a:hover {
+  .login-box button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -103,7 +103,7 @@ html {
     display: block;
   }
   
-  .login-box a span:nth-child(1) {
+  .login-box button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -121,7 +121,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(2) {
+  .login-box button span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;

@@ -16,10 +16,6 @@ return new class extends Migration
         Schema::create('exam1s', function (Blueprint $table) {
             $table->unsignedBigInteger('team_id');
             $table->string('email')->unique();
-            $table->string("first_question");
-            $table->string("second_question");
-            $table->string("third_question");
-            $table->string("fourth_question");
             $table->integer("exam_1_point")->default('0');
 
 

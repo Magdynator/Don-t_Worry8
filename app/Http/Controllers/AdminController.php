@@ -9,7 +9,9 @@ use App\Models\Exam1;
 use App\Models\Exam2;
 use App\Models\Exam3;
 use App\Models\Exam4;
+use App\Models\mas;
 
+use Image;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -343,13 +345,128 @@ public function editgamesA3($id, Request $req){
 }
 
 public function upMas(Request $req){
-    $img = $req->input('img');
     $mass = $req->input('mass');
-    DB::insert('insert into mas (masseges, img) values (?, ?)', [$mass, $img]);
-    return redirect('/adminpanal');
+    $image = $req->input('img');
+        
 
+        DB::insert('insert into mas (masseges, img) values (?, ?)', [$mass, $image]);
+    return redirect('/adminpanal');
 }
 
+public function getsetting(Request $req){
+    $state = $req->input('state');
+    $state2 = $req->input('state2');
+    $state3 = $req->input('state3');
+    $state4 = $req->input('state4');
+    // return $state;  
+    DB::update('update others set open_or1 = ?, open_or2 = ?, open_or3 = ? , open_or4 = ? where id = ?', [$state, $state2, $state3, $state4,1]);
+    return redirect('/adminpanal');
+   
+}
+ 
+public function exam1A(Request $req){
+    $tp= 0;
+    $email = $req->input("email");
+    $id = $req->input("id");
 
+    $qu1 = $req->input('1');
+    if ($qu1 == "طعنا بالرمح"){
+        $tp = $tp + 2;
+    }
+    $qu2 = $req ->input('2');
+    if($qu2 == "الثالث"){
+        $tp = $tp + 2;
+    }
+    $qu3 = $req->input('3');
+    if($qu3 == "ميروسلاف كلوزة"){
+        $tp = $tp + 2;
+    }
+    $qu4 = $req->input('4');
+    if($qu4 == "حزقيال الملك"){
+        $tp = $tp + 2;
+    }
+    $qu5 = $req->input('5');
+    if($qu5 == 89){
+        $tp = $tp + 2;
+    }
+    $qu6 = $req->input('6');
+    if($qu6 == "عثنيئيل بن قناذ"){
+        $tp = $tp + 2;
+    }
+    $qu7 = $req->input('7');
+    if($qu7 == "اوروجوا"){
+        $tp = $tp + 2;
+    }        
+
+    $qu8 = $req->input('8');
+    if($qu8 == "الصيني"){
+        $tp = $tp + 2;
+    }
+
+    $qu9 = $req->input('9');
+    if($qu9 == "الكلاب"){
+        $tp = $tp + 2;
+    }
+
+    $qu10 = $req->input('10');
+    if($qu9 == "الان شيرار"){
+        $tp = $tp + 2;
+    }
+    DB::insert('insert into exam1s (team_id,email ,exam_1_point) values (?,?,?)', [$id,$email,$tp]);
+    return redirect('/'); 
+
+}
+public function exam2A(Request $req){
+    $tp= 0;
+    $email = $req->input("email");
+    $id = $req->input("id");
+
+    $qu1 = $req->input('1');
+    if ($qu1 == "14"){
+        $tp = $tp + 2;
+    }
+    $qu2 = $req ->input('2');
+    if($qu2 == "يعقوب بن ذبدي"){
+        $tp = $tp + 2;
+    }
+    $qu3 = $req->input('3');
+    if($qu3 == "دافيد فيا"){
+        $tp = $tp + 2;
+    }
+    $qu4 = $req->input('4');
+    if($qu4 == "وارسو"){
+        $tp = $tp + 2;
+    }
+    $qu5 = $req->input('5');
+    if($qu5 == "بريطانيا "){
+        $tp = $tp + 2;
+    }
+    $qu6 = $req->input('6');
+    if($qu6 == "لامك "){
+        $tp = $tp + 2;
+    }
+    $qu7 = $req->input('7');
+    if($qu7 == "اوروبا"){
+        $tp = $tp + 2;
+    }        
+
+    $qu8 = $req->input('8');
+    if($qu8 == "انسيموس"){
+        $tp = $tp + 2;
+    }
+
+    $qu9 = $req->input('9');
+    if($qu9 =="5"){
+        $tp = $tp + 2;
+    }
+
+    $qu10 = $req->input('10');
+    if($qu9 == "الهند"){
+        $tp = $tp + 2;
+    }
+    DB::insert('insert into exam2s (team_id,email ,exam_2_point) values (?,?,?)', [$id,$email,$tp]);
+    return redirect('/'); 
+
+}
 }
 

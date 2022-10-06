@@ -36,6 +36,5 @@ public function getMas(){
     ->orderBy('id', 'desc')
     ->first();
     return view('admin.massage.messeage',compact('mas')); 
-    // return $mas;
  }
 }

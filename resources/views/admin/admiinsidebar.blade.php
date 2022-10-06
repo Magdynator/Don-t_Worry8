@@ -78,7 +78,7 @@
               </a>
             </li>
             <li class="list">
-              <a href="admin/ExamsSetting" class="nav-link">
+              <a href="setting" class="nav-link">
               <i class="bx bx-cog icon"></i>
                 <span class="link">exmas setting</span>
               </a>

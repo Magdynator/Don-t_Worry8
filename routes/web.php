@@ -128,6 +128,13 @@ Route::get('/exam4',function () {
 Route::get('/admin/Message',function () {
     return view('admin.massage.masgform');
 });
+Route::get('/setting',function () {
+     return view('admin.setting.setting');
+});
+Route::post('/setting',[AdminController::class,'getsetting']);
+Route::post('/welldone',[AdminController::class,'exam1A']);
+Route::post('/welldone2',[AdminController::class,'exam2A']);
+    
 
 Route::post('admin/mas',[AdminController::class,'upMas']);
 Route::get('/massage', [UserController::class, 'getMas']);

@@ -7,8 +7,11 @@ Hide the label if placeholder is supported
 
 body{
     background:#b4b4b4;
+    
   }
-  
+  .continer{
+    width: 65%; /* The width is 20%, by default */
+  }
   #registration-form {
     font-family:'Open Sans Condensed', sans-serif;
       width: 400px;

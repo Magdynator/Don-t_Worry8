@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('close', function (Blueprint $table) {
+        Schema::create('others', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('open_or1')->default('close');
             $table->string('open_or2')->default('close');
