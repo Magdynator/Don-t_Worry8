@@ -137,8 +137,6 @@ Route::post('/welldone',[AdminController::class,'exam1A']);
 Route::post('/welldone2',[AdminController::class,'exam2A']);
 
 
-Route::post('admin/mas',[AdminController::class,'upMas']);
-Route::get('/massage', [UserController::class, 'getMas']);
 
 
 Route::get('admin1/{id}/edit/games', [AdminController::class, 'getgamesA1']);
