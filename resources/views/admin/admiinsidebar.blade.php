@@ -38,6 +38,8 @@
       <div class="logo">
         <i class="bx bx-menu menu-icon"></i>
         <span class="logo-name">Dont't Worry 8</span>
+
+        <a href="/logout" > logout</a>
       </div>
       <div class="sidebar">
         <div class="logo">

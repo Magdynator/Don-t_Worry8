@@ -9,9 +9,8 @@ use App\Models\Exam1;
 use App\Models\Exam2;
 use App\Models\Exam3;
 use App\Models\Exam4;
-use App\Models\mas;
-
-use Image;
+use Hash;
+use Session;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -24,81 +23,88 @@ public function admin(){
 }
 
 public function adminPage(Request $req){
-
     
-    if(empty($req->input())){
-        return redirect('/admin');
+    $req->validate([
+        'email'=>'required|email',
+        'password'=>'required|min:4'
+    ]);
+    $emaildetails = Team::where('email', '=', $req->email)->first();
+        if ($emaildetails){
+            if(Hash::check($req->password, $emaildetails->password)){
+                $req->session()->put('loginId', $emaildetails->id);
+                $ruleId = $emaildetails-> rule_id;
+                switch ($ruleId){
+                    case 10:
+                        $data = $req->input();
+                        $emails = Team::all(); 
+                        $games = Games::all();
+                        $exam1 = Exam1::all();
+                        $exam2 = Exam2::all();
+                        return view('admin.adminpage',compact('emails', 'games', 'exam1', 'exam2'));
+                        break;
+                    case 1:
+                        $game1 = Games::all();
+                        return view('admin.games.game1.game1',compact('game1'));
+                        break;
+                    case 2:
+                        $game2 = Games::all();
+                        return view('admin.games.game2.game2',compact('game2'));
+                        break;
+                    case 3:
+                        $game3 = Games::all();
+                        return view('admin.games.game3.game3',compact('game3'));
+                        break; 
+                    case 4:
+                        $game4 = Games::all();
+                        return view('admin.games.game4.game4',compact('game4'));
+                        break; 
+                    case 5:
+                        $game5 = Games::all();
+                        return view('admin.games.game5.game5',compact('game5'));
+                        break;
+                    case 6:
+                        $game6 = Games::all();
+                        return view('admin.games.game6.game6',compact('game6'));
+                        break;                      
+                    case 7:
+                        $game7 = Games::all();
+                        return view('admin.games.game7.game7',compact('game7'));
+                        break;    
+                    case 8:
+                        $game8 = Games::all();
+                        return view('admin.games.game8.game8',compact('game8'));
+                        break;
+                    case 9:
+                        $game9 = Games::all();
+                        return view('admin.games.game9.game9',compact('game9'));
+                        break;
+                    case 11:
+                        $games = Games::all();
+                        return view('admin/games/admin/admin1',compact('games') );
+                        break;
+                    case 12:
+                        $games = Games::all();
+                        return view('admin/games/admin2/admin2',compact('games') );
+                        break;         
+                    case 13:
+                        $games = Games::all();
+                        return view('admin/games/admin3/admin3',compact('games') );
+                        break;
+                                
+                    default:
+                    return redirect('/');
+                }
+            }else{
+                return back()->with('fail','Password not matches.');
+
+            }
+    
+    
     }else{
+        return back()->with(' fail','This email is not registered');
 
-    $emaildetails = DB::table('teams')->where('email', $req->input('email'))->first();
-    if ($req->input('email') == $emaildetails-> email and $req->input('password') == $emaildetails-> password ){
-    $ruleId = $emaildetails-> rule_id;
-    switch ($ruleId){
-
-        case 10:
-            $data = $req->input();
-            $req->session()->put('adminemail', $data['email']);
-            $emails = Team::all(); 
-            $games = Games::all();
-            $exam1 = Exam1::all();
-            $exam2 = Exam2::all();
-            return view('admin.adminpage',compact('emails', 'games', 'exam1', 'exam2'));
-            break;
-        case 1:
-            $game1 = Games::all();
-            return view('admin.games.game1.game1',compact('game1'));
-            break;
-        case 2:
-            $game2 = Games::all();
-            return view('admin.games.game2.game2',compact('game2'));
-            break;
-        case 3:
-            $game3 = Games::all();
-            return view('admin.games.game3.game3',compact('game3'));
-            break; 
-        case 4:
-            $game4 = Games::all();
-            return view('admin.games.game4.game4',compact('game4'));
-            break; 
-        case 5:
-            $game5 = Games::all();
-            return view('admin.games.game5.game5',compact('game5'));
-            break;
-        case 6:
-            $game6 = Games::all();
-            return view('admin.games.game6.game6',compact('game6'));
-            break;                      
-        case 7:
-            $game7 = Games::all();
-            return view('admin.games.game7.game7',compact('game7'));
-            break;    
-        case 8:
-            $game8 = Games::all();
-            return view('admin.games.game8.game8',compact('game8'));
-            break;
-        case 9:
-            $game9 = Games::all();
-            return view('admin.games.game9.game9',compact('game9'));
-            break;
-        case 11:
-            $games = Games::all();
-            return view('admin/games/admin/admin1',compact('games') );
-            break;
-        case 12:
-            $games = Games::all();
-            return view('admin/games/admin2/admin2',compact('games') );
-            break;         
-        case 13:
-            $games = Games::all();
-            return view('admin/games/admin3/admin3',compact('games') );
-            break;
-                    
-        default:
-        return redirect('/');
     }
     
-    }
-    }
 }
 
 public function email(){
@@ -111,18 +117,19 @@ public function addemail(){
 }
 
 public function reg(Request $req){  
-    $id = $req->input("id");
-    $ruleId = $req->input("ruleid");
-    $email = $req->input("email");
-    $password = $req->input("password");
-    $team = Team::create([
-        'id'=> $id,
-        'rule_id' =>$ruleId,
-        'email' => $email,
-        'password' => $password,
-        'created_at' => Carbon::now()->toDateTimeString(),
-    ]); 
-    return  redirect('/admin/email')->with('status','Email Added Successfully');
+    $team = new Team();
+    $team-> id = $req->id;
+    $team-> rule_id = $req->ruleid;
+    $team-> email= $req->email;
+    $team-> password = Hash::make($req->password);
+    $team-> created_at = Carbon::now()->toDateTimeString();
+    $res = $team -> save();
+    if($res){
+        return back()->with('success','Email Added Successfully'); 
+    }else{
+        return back()->with('fail','Something wrong');
+
+    }
 
 }
 
@@ -362,9 +369,6 @@ public function getsetting(Request $req){
  
 public function exam1A(Request $req){
     $tp= 0;
-    $email = $req->input("email");
-    $id = $req->input("id");
-
     $qu1 = $req->input('1');
     if ($qu1 == "طعنا بالرمح"){
         $tp = $tp + 2;
@@ -408,15 +412,16 @@ public function exam1A(Request $req){
     if($qu9 == "الان شيرار"){
         $tp = $tp + 2;
     }
+
+    $id = Session::get('loginId');
+    $team = Team::where('id', $id)->first();
+    $email = $team -> email;
     DB::insert('insert into exam1s (team_id,email ,exam_1_point) values (?,?,?)', [$id,$email,$tp]);
     return redirect('/'); 
 
 }
 public function exam2A(Request $req){
     $tp= 0;
-    $email = $req->input("email");
-    $id = $req->input("id");
-
     $qu1 = $req->input('1');
     if ($qu1 == "14"){
         $tp = $tp + 2;
@@ -460,11 +465,18 @@ public function exam2A(Request $req){
     if($qu9 == "الهند"){
         $tp = $tp + 2;
     }
+    $id = Session::get('loginId');
+    $team = Team::where('id', $id)->first();
+    $email = $team -> email;
     DB::insert('insert into exam2s (team_id,email ,exam_2_point) values (?,?,?)', [$id,$email,$tp]);
     return redirect('/'); 
 
 }
-
+public function logout(){
+    if(Session::has("loginId")){
+        Session::pull("loginId");
+        return redirect('/');
+    }
 
 }
-
+}

@@ -10,12 +10,6 @@
   <h2>الأمتحان الثاني</h2>
   <form method ="Post" action="welldone2">
   @csrf
-      <div class='row'>
-				<input type="email" placeholder="email" name='email' data-required="true" data-error-message="Your First Name is required">
-			</div>
-      <div class='row'>
-				<input type="text" placeholder="id" name='id' data-required="true" data-error-message="Your First Name is required">
-			</div>
   <fieldset>
     <legend>كم عدد الرسائل التي كتبها بولس الرسولا </legend>
 

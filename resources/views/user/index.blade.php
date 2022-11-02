@@ -36,6 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#exam2">الأمحان الثاني</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">تسجيل الخروج</a>
+                    </li>
                 </ul>
             </div>
         </div>

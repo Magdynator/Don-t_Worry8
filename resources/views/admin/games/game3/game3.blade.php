@@ -36,7 +36,11 @@
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif
     <div class="container">
+    <form action="logout">
+    <input type="submit" value="logout" />
+</form>
     <h1 Style="text-align: center; background-color:rgb(210, 210, 210);">Game 3</h1><br><br>
+    
     <button type="button" class="btn btn-primary" onclick="window.location='{{ url("admin/addgame3") }}'">Add game 3 point</button>
       
 

@@ -11,12 +11,6 @@
   <h2>الأمتحان الأول</h2>
   <form method ="Post" action="welldone">
   @csrf
-  <div class='row'>
-				<input type="email" placeholder="email" name='email' data-required="true" data-error-message="Your First Name is required">
-			</div>
-      <div class='row'>
-				<input type="text" placeholder="id" name='id' data-required="true" data-error-message="Your First Name is required">
-			</div>
   <fieldset>
     <legend>كيف استشهد  توما الرسول</legend>
 
